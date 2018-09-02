@@ -700,3 +700,23 @@ RuntimeError ({"utf8"=>"✓", "_method"=>"patch", "authenticity_token"=>"OGgyi1j
   Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.7ms)
   Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
   Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (23.6ms)
+
+
+Started GET "/posts/1/edit" for 98.221.88.135 at 2018-09-02 02:15:45 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered posts/edit.html.erb within layouts/application (14.5ms)
+Completed 200 OK in 269ms (Views: 249.4ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/posts/1" for 98.221.88.135 at 2018-09-02 02:15:55 +0000
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"V0pnp9ycPgOhGqiltOKtztiD4592w3xoLjci0antvvYDV4c/UZaLVEl4erIsSouCiLp1ddeNmVriX5dWJOQ+Rw==", "post"=>{"title"=>"Rails Introduction Quiz", "description"=>"ABCDEFGHIJK"}, "commit"=>"Submit Post", "id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "posts" SET "title" = ?, "description" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["title", nil], ["description", nil], ["updated_at", "2018-09-02 02:15:55.848242"], ["id", 1]]
+  [1m[35m (2.2ms)[0m  commit transaction
+Redirected to http://159.89.225.105:48522/posts/1
+Completed 302 Found in 7ms (ActiveRecord: 2.8ms)
