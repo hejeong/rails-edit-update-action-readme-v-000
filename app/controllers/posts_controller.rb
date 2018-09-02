@@ -25,6 +25,9 @@ class PostsController < ApplicationController
   end
 
   def update
-    raise params.inspect
+    @post = Post.find_by_id(params[:id])
+    @post.title = params[:title]
+    @post.description = params[:description]
+    @post.save
   end
 end
