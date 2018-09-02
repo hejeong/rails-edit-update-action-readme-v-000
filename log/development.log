@@ -751,3 +751,14 @@ Processing by PostsController#edit as HTML
   [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 1]]
   Rendered posts/edit.html.erb within layouts/application (1.6ms)
 Completed 200 OK in 13ms (Views: 11.6ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/posts/1" for 98.221.88.135 at 2018-09-02 02:18:36 +0000
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GQFxwZr3qIBYI8C0lCd5APiBtwOefUrMTe/brQGAdbFNHJFZF/0d17BBEqMMj19MqLgh6T8zr/6Bh24qjIn1AA==", "post"=>{"title"=>"A", "description"=>"BCDEFG"}, "commit"=>"Submit Post", "id"=>"1"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `find_by_id' for nil:NilClass):
+  app/controllers/posts_controller.rb:28:in `update'
+
+
