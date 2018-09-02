@@ -907,3 +907,33 @@ Migrating to CreatePosts (20151230232412)
   [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151230232412"]]
   [1m[36m (43.4ms)[0m  [1mcommit transaction[0m
   [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/" for 98.221.88.135 at 2018-09-02 02:29:49 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/railties-4.2.10/lib/rails/templates/rails/welcome/index.html.erb (1.6ms)
+Completed 200 OK in 19ms (Views: 10.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for 98.221.88.135 at 2018-09-02 02:29:52 +0000
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 297ms (Views: 294.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/new" for 98.221.88.135 at 2018-09-02 02:29:58 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 14ms (Views: 10.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/posts" for 98.221.88.135 at 2018-09-02 02:30:10 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eK8CuMXjSyNowZljUuiacN+PZd2B+ISgjQziqtu9c7AssuIgSOn+dICjS3TKQLw8j7bzNyC2YZJBZFctVrTzAQ==", "title"=>"New Post", "description"=>"Description", "commit"=>"Submit Post"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "New Post"], ["description", "Description"], ["created_at", "2018-09-02 02:30:10.058076"], ["updated_at", "2018-09-02 02:30:10.058076"]]
+  [1m[36m (17.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://159.89.225.105:48522/posts/1
+Completed 302 Found in 23ms (ActiveRecord: 17.7ms)
