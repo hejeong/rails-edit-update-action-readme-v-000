@@ -1,9 +1,9 @@
 <%= form_for @post do |form| %>
-  <%= f.label 'Post Title'%> <br>
-  <%= f.text_field :title %> <br>
+  <%= form.label 'Post Title'%> <br>
+  <%= form.text_field :title %> <br>
 
-  <%= f.label 'Post Description' %> <br>
-  <%= f.text_area :description %><br>
+  <%= form.label 'Post Description' %> <br>
+  <%= form.text_area :description %><br>
 
-  <%= f.submit "Submit Post" %>
+  <%= form.submit "Submit Post" %>
 <% end %>
